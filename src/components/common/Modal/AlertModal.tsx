@@ -33,6 +33,7 @@ const AlertModal = (
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
+            marginTop:20
           }}>
           {props.firstBtn && <Button {...props.firstBtn} />}
           {props.secondBtn && <Button {...props.secondBtn} />}

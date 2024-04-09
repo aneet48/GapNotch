@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
   linearGradient: {
     // marginHorizontal:10,
     padding: 15,
+    borderRadius:10
   },
   title: {
     color: 'white',

@@ -4,16 +4,22 @@ import {
   View,
   TouchableOpacity,
   ViewStyle,
+  TextStyle,
 } from 'react-native';
 import React from 'react';
+import {Icon} from 'react-native-vector-icons/Icon';
 
 const Button = (props: {
   title: any;
   onPress?: any;
   viewStyle?: ViewStyle;
+  textStyle?: TextStyle;
   transparent?: boolean;
+  icon?: any;
+  iconLeft?: boolean;
 }) => {
-  const {title, onPress, viewStyle, textStyle, transparent} = props;
+  const {title, onPress, viewStyle, textStyle, transparent, icon, iconLeft} =
+    props;
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -23,6 +29,7 @@ const Button = (props: {
         {backgroundColor: transparent ? 'transparent' : '#f98d67'},
         viewStyle,
       ]}>
+      {icon && iconLeft ? icon : null}
       <Text
         style={[
           styles.title,
@@ -33,6 +40,7 @@ const Button = (props: {
         ]}>
         {title}
       </Text>
+      {icon && !iconLeft ? icon : null}
     </TouchableOpacity>
   );
 };
@@ -44,9 +52,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    marginTop: 20,
+    // marginTop: 20,
     borderWidth: 1,
     borderColor: '#f98d67',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 16,

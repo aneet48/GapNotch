@@ -37,7 +37,7 @@ const NewTask = (
           placeholder="Description(Optional)"
           maxLength={200}
         />
-        <Button title={'Create'} />
+        <Button title={'Create'} viewStyle={{marginTop: 20}} />
       </View>
     </ModalWrapper>
   );
